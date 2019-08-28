@@ -1,24 +1,16 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
+import Axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const[arr,setArr]=useState(null);
+  useEffect(()=>{
+    Axios.get('/api/getArr').then(res=>setArr(res.data));
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {arr?arr:"no array"}
     </div>
   );
 }
