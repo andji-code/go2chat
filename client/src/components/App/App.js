@@ -1,11 +1,12 @@
 import React, {useEffect,useState} from 'react';
 import Axios from 'axios';
-import './App.css';
+import s from './App.module.css';
+import Login from '../Login';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div className={s.app}>
+      <Login />
     </div>
   );
 }
