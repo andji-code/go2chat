@@ -10,12 +10,12 @@ import FormHeader from '../shared/styles/FormHeader';
 
 const maxLength25 = maxLength(25);
 
-const _SingInForm = props => {
+const _LogInForm = props => {
     const { handleSubmit, pristine, reset, submitting } = props
     return (
         <PlainForm onSubmit={handleSubmit} >
 
-            <FormHeader>Sing In</FormHeader>
+            <FormHeader>Log In</FormHeader>
 
             <Field
                 name="username"
@@ -34,14 +34,6 @@ const _SingInForm = props => {
                 validate={required}
             />
 
-            <Field
-                name="rePassword"
-                type="password"
-                component={pureField}
-                placeholder="repeat password"
-                validate={[required,rePass]}
-            />
-
             <FormFooter>
 
                 <Button ok type="submit" disabled={submitting}>
@@ -57,7 +49,7 @@ const _SingInForm = props => {
         </PlainForm>
     )
 }
-const SingInForm = reduxForm({
-    form: 'SingInForm' // a unique identifier for this form
-})(_SingInForm)
-export default SingInForm;
+const LogInForm = reduxForm({
+    form: 'LogInForm' // a unique identifier for this form
+})(_LogInForm)
+export default LogInForm;

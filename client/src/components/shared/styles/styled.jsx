@@ -8,6 +8,10 @@ const colors = {
     white: "#F2FFFC"
 }
 
+const fly = ()=>`
+    box-shadow: 2px 2px 6px #443;
+`
+
 const neon = (color = colors.white, blur = '6px') => `
     text-shadow: 0 0 ${blur} ${color};
 `
@@ -43,4 +47,4 @@ const lightenDarken=(col, amt)=> {
 }
 
 
-export { neon, colors, lightenDarken};
+export { neon, colors, lightenDarken, fly};

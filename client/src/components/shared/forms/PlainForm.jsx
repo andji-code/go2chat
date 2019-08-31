@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../shared/styles/styled';
+import { colors } from '../styles/styled';
 
 const PlainForm = styled.form`
     background: ${colors.blue};
