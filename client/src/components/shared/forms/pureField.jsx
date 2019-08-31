@@ -1,4 +1,5 @@
 import React from 'react'
+import TooltipInput from './TooltipInput';
 
 const pureField = ({
     input,
@@ -10,12 +11,12 @@ const pureField = ({
     <div>
   
       <label>{label}</label>
-      <div>
+      <TooltipInput>
         <input {...input} placeholder={placeholder} type={type} />
-        {touched &&
-          ((error && <span>{error}</span>) ||
-            (warning && <span>{warning}</span>))}
-      </div>
+          {touched &&
+            ((error && <div className="tooltip"><span>{error}</span></div>) ||
+              (warning && <div className="tooltip"><span>{warning}</span></div>))}
+      </TooltipInput>
   
     </div>
 )
